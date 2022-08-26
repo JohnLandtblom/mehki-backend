@@ -11,7 +11,7 @@ app.use(cors());
 //   res.status(200).json(body);
 // });
 
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use(express.static(path.join(__dirname, "frontend", "app.js")));
 
 mongoose
   .connect(
