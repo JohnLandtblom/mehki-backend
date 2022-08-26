@@ -5,13 +5,9 @@ const path = require("path");
 const app = express();
 app.use(cors());
 
-// app.get("/", (req, res) => {
-//   headers = { "cache-control": "no-cache" };
-//   body = { status: "available" };
-//   res.status(200).json(body);
-// });
-
-app.use(express.static(path.resolve(__dirname, "./frontend/public")));
+app.use(
+  express.static(path.resolve(__dirname, "./frontend/build", "index.html"))
+);
 
 mongoose
   .connect(
