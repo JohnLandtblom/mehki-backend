@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 
 app.use(
-  express.static(path.resolve(__dirname, "./frontend/build", "index.html"))
+  express.static(path.resolve(__dirname, "./frontend/public", "index.html"))
 );
 
 mongoose
