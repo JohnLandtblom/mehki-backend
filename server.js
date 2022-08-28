@@ -5,8 +5,6 @@ const path = require("path");
 const app = express();
 app.use(cors());
 
-app.use(express.static(__dirname, "./frontend/public", "index.html"));
-
 mongoose
   .connect(
     "mongodb+srv://db:swed123@cluster0.kbbyqnx.mongodb.net/?retryWrites=true&w=majority"
@@ -15,5 +13,13 @@ mongoose
     console.log("Connected to DB");
   });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, console.log(`Im inside now!${PORT}`));
+const port = process.env.PORT || 3001;
+
+if (process.env.NODE_ENV === " production") {
+  app.use(express.static("build"));
+  app.get("*", (req, res) => {
+    req.sendFile(path.resolve(__dirname, "build", "index.html"));
+  });
+}
+
+app.listen(port, console.log(`Im inside now!${port}`));
