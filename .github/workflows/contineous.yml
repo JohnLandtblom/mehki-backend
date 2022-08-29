@@ -28,7 +28,7 @@ jobs:
 
       # - name: Install dependencies
       #
-      - run: cd frontend
+     # - run: cd frontend
       - run: npm i
       - run: npm run build --if-present
 
