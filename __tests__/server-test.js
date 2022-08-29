@@ -1,4 +1,3 @@
-const serverTest = require("../server");
 const mongoose = require("mongoose");
 
 it("connects backend to Database", async () => {
