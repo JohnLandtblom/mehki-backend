@@ -1,10 +1,16 @@
 import "./App.css";
+import LoginForm from "./components/LoginForm";
 
 function App() {
+  const userInfoHandler = (userInfo) => {
+    // Available in App.js
+    console.log(userInfo);
+  };
+
   return (
     <div className="App">
-      <h1>Hello swedish react mafia</h1>
-      <h4>Time to code</h4>
+      {/* Prop som hämtar userInfo till App.js */}
+      <LoginForm sendToApp={userInfoHandler} />
     </div>
   );
 }
