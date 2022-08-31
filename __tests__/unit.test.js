@@ -1,3 +1,7 @@
+/**
+ * @group unit
+ */
+
 const mongoose = require("mongoose");
 
 it("connects backend to Database", async () => {
