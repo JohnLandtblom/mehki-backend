@@ -31,3 +31,33 @@
 
 
 ```
+
+# We are Mehki
+
+Chat application run with React and MongoDB
+
+### Packages
+
+    * Node.js
+    * Express.js
+    * Nodemon
+    * Cors
+    * Mongoose
+    * Path
+    * Jest
+    * Jest runner groups
+
+
+
+### Systembild/Bird's eye view of our system ()
+
+```mermaid
+   graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+    
+    
+```
+
