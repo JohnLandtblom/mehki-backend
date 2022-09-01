@@ -10,23 +10,14 @@
 
 ```
 
-    You choose where your workspace folder is
-
-    workspaceExample = /c/Users/<USERNAME>/wd/
-
-    cd <workspace>
-
-    git clone https://github.com/jergiemascan/paketering-frontend.git
+    git clone https://github.com/jergiemascan/paketering-frontend.git in your workspace
 
 
 ```
 
 ### Working with the project in VSCode
 
-```
-
-    Opens the project directly into Visual Studio Code
-    code .
+``` 
 
     Run this to get the necessary packages for the project to work
     npm install
