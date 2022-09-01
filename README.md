@@ -51,8 +51,6 @@ Chat application run with React and MongoDB
 
 ### System Overhead
 
-   Utvecklingsmiljöer, Docker, Heroku
-
 ```mermaid 
    flowchart LR;
    
