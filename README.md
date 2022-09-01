@@ -10,7 +10,7 @@
 
 ```
 
-    git clone https://github.com/jergiemascan/paketering-frontend.git in your workspace
+    git clone https://github.com/JohnLandtblom/Paketering---backend.git in your workspace
 
 
 ```
@@ -26,7 +26,7 @@
     npm start
 
 
-    Navigate to /c/Users/<USERNAME>/wd/paketering-frontend/src
+    Navigate to /c/Users/<USERNAME>/wd/paketering---backend/src
     Write your Hello World and save. You will see the changes update in your browser automatically
 
 
@@ -49,14 +49,17 @@ Chat application run with React and MongoDB
 
 
 
-### Systembild/Bird's eye view of our system ()
+### System Overhead
 
-```mermaid
-   graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+   Utvecklingsmiljöer, Docker, Heroku
+
+```mermaid 
+   flowchart LR;
+   
+   Dev_Env-->Docker-->Heroku
+   
+
+   MongoDB<-- Mehki -->React
     
     
 ```
