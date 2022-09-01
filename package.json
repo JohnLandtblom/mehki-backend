@@ -8,8 +8,7 @@
     "dev": "nodemon server.js",
     "test": "jest --group=-component --group=-integration ",
     "componenttest": "jest --group=component",
-    "integrationtest": "jest --group=integration ",
-    "build": "cd frontend && npm install && npm run build"
+    "integrationtest": "jest --group=integration "
   },
   "repository": {
     "type": "git",
