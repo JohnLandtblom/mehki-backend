@@ -5,6 +5,10 @@ const path = require("path");
 const app = express();
 app.use(cors());
 
+const routes = require("./routes");
+
+app.use("/", routes);
+
 mongoose
   .connect(
     "mongodb+srv://db:swed123@cluster0.kbbyqnx.mongodb.net/?retryWrites=true&w=majority"
