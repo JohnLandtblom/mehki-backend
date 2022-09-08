@@ -9,12 +9,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const routes = require("./routes/user");
+app.use("/", routes);
+
 const swaggerDocs = swaggerJsDoc(swaggerDocument);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
-
-const routes = require("./routes/user");
-
-app.use("/", routes);
 
 mongoose
   .connect(
