@@ -14,13 +14,21 @@ const { register, login } = require("../controller");
  *           schema:
  *             type: object
  *             properties:
- *               name:
+ *               firstname:
  *                 type: string
- *                 description: The user's name.
- *                 example: Jon Doe
+ *                 description: The user's firstname.
+ *                 example: Jon 
+ *               lastname:
+ *                 type: string
+ *                 description: The user's lastname.
+ *                 example: Doe 
  *               password:
  *                 type: string
  *                 description: The user's password.
+ *                 example: secret
+ *               confirmpassword:
+ *                 type: string
+ *                 description: To confirm user's password have to match password.
  *                 example: secret
  *               email:
  *                 type: string
