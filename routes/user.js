@@ -6,8 +6,7 @@ const { register, login } = require("../controller");
  * @openapi
  * /v0/register:
  *   delete:
- *     tags: 
- *       - user
+ *     summary: Update an existing user
  *     description: Deletes a user!
  *     requestBody:
  *       required: true
@@ -122,6 +121,7 @@ router.get("/v0/register", register);
  * @openapi
  * /v0/register:
  *   put:
+ *     summary: Update an existing user
  *     description: Changes a user!
  *     requestBody:
  *       required: true
@@ -179,6 +179,7 @@ router.put("/v0/register", register);
  * @openapi
  * /v0/register:
  *   post:
+ *     summary: Create a new user
  *     description: Creates a user!
  *     requestBody:
  *       required: true
