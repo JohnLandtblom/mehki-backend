@@ -5,7 +5,6 @@ const { register, login } = require("../controller");
 
 /**
  * @openapi
-<<<<<<< HEAD
  * /v0/users/{userId}:
  *  delete:
  *      description: Delete user
@@ -19,62 +18,6 @@ const { register, login } = require("../controller");
  *      responses:
  *          200:
  *              description: User that was deleted
-=======
- * /v0/register:
- *   delete:
- *     summary: Update an existing user
- *     description: Deletes a user!
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               firstname:
- *                 type: string
- *                 description: The user's firstname.
- *                 example: Jon 
- *               lastname:
- *                 type: string
- *                 description: The user's lastname.
- *                 example: Doe 
- *               password:
- *                 type: string
- *                 description: The user's password.
- *                 example: secret
- *               confirmpassword:
- *                 type: string
- *                 description: To confirm user's password have to match password.
- *                 example: secret
- *               email:
- *                 type: string
- *                 description: The user's email.
- *                 example: jon.doe@some.where
- *     responses:
- *       200:
- *         description: Deletes a user.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: object
- *                   properties:
- *                     id:
- *                       type: integer
- *                       description: The user ID.
- *                       example: 1
- *                     name:
- *                       type: string
- *                       description: The user's name.
- *                       example: Jone Doe
- *                     email:
- *                       type: string
- *                       description: The user's name.
- *                       example: Jone Doe
->>>>>>> 6137a49ddf98d1b7fe8521713488500c5f4621bb
  */
 
 router.delete("/v0/users/{userId}", (req, res) => {
@@ -119,7 +62,6 @@ router.get("/v0/getUsers", (req, res) => {
 
 /**
  * @openapi
-<<<<<<< HEAD
  * /v0/userUpdate:
  *  put:
  *    tags:
@@ -140,62 +82,6 @@ router.get("/v0/getUsers", (req, res) => {
  *  delete:
  *    tags:
  *      - user
-=======
- * /v0/register:
- *   put:
- *     summary: Update an existing user
- *     description: Changes a user!
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               firstname:
- *                 type: string
- *                 description: The user's firstname.
- *                 example: Jon 
- *               lastname:
- *                 type: string
- *                 description: The user's lastname.
- *                 example: Doe 
- *               password:
- *                 type: string
- *                 description: The user's password.
- *                 example: secret
- *               confirmpassword:
- *                 type: string
- *                 description: To confirm user's password have to match password.
- *                 example: secret
- *               email:
- *                 type: string
- *                 description: The user's email.
- *                 example: jon.doe@some.where
- *     responses:
- *       200:
- *         description: Changes a user.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: object
- *                   properties:
- *                     id:
- *                       type: integer
- *                       description: The user ID.
- *                       example: 1
- *                     name:
- *                       type: string
- *                       description: The user's name.
- *                       example: Jone Doe
- *                     email:
- *                       type: string
- *                       description: The user's name.
- *                       example: Jone Doe
->>>>>>> 6137a49ddf98d1b7fe8521713488500c5f4621bb
  */
 router.put("/v0/userUpdate", (req, res) => {
   res.status(200).send({ status: "User succesfully updated! :)" });
