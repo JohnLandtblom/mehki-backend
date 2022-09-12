@@ -29,17 +29,14 @@ exports.login = async (req, res) => {
   const { email, password } = await req.body;
 
   if (!email || !password) {
-    res.sendStatus(401).json({
+    res.status(401).json({
       status: "Failed",
       message: "Please enter your email and password!",
     });
     return;
   } else {
-    res.sendStatus(201).json({
+    res.status(201).json({
       status: "success",
-      data: {
-        user: newUser,
-      },
     });
   }
 };
