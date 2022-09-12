@@ -145,9 +145,12 @@ router.put("/v0/userUpdate", (req, res) => {
  *                       example: Jone Doe
  */
 
-router.post("/v0/register", (req, res) => {
-  res.status(200).send({ status: "User succesfully created! :)" });
-});
+router.post("/v0/register", register);
+router.post("/v0/signin", login);
+
+// router.post("/v0/register", (req, res) => {
+//   res.status(200).send({ status: "User succesfully created! :)" });
+// });
 
 //router.post("/v0/signin", login);
 
