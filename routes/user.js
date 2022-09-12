@@ -18,11 +18,11 @@ const { register, login } = require("../controller");
  *               firstname:
  *                 type: string
  *                 description: The user's firstname.
- *                 example: Jon 
+ *                 example: Jon
  *               lastname:
  *                 type: string
  *                 description: The user's lastname.
- *                 example: Doe 
+ *                 example: Doe
  *               password:
  *                 type: string
  *                 description: The user's password.
@@ -75,11 +75,11 @@ router.delete("/v0/register", register);
  *               firstname:
  *                 type: string
  *                 description: The user's firstname.
- *                 example: Jon 
+ *                 example: Jon
  *               lastname:
  *                 type: string
  *                 description: The user's lastname.
- *                 example: Doe 
+ *                 example: Doe
  *               password:
  *                 type: string
  *                 description: The user's password.
@@ -133,11 +133,11 @@ router.get("/v0/register", register);
  *               firstname:
  *                 type: string
  *                 description: The user's firstname.
- *                 example: Jon 
+ *                 example: Jon
  *               lastname:
  *                 type: string
  *                 description: The user's lastname.
- *                 example: Doe 
+ *                 example: Doe
  *               password:
  *                 type: string
  *                 description: The user's password.
@@ -191,11 +191,11 @@ router.put("/v0/register", register);
  *               firstname:
  *                 type: string
  *                 description: The user's firstname.
- *                 example: Jon 
+ *                 example: Jon
  *               lastname:
  *                 type: string
  *                 description: The user's lastname.
- *                 example: Doe 
+ *                 example: Doe
  *               password:
  *                 type: string
  *                 description: The user's password.
