@@ -14,7 +14,7 @@ app.use(express.json());
 const routes = require("./routes/user");
 app.use("/", routes);
 
-//Heroku Open app display testing backend :)
+//Heroku Open app display testing backend
 app.get("/", function (req, res) {
   res.status(200).send({ message: "This is backend hello Heroku!" });
 });
