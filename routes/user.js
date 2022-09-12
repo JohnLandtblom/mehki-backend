@@ -1,9 +1,11 @@
 const express = require("express");
+const { Server } = require("http");
 const router = express.Router();
 const { register, login } = require("../controller");
 
 /**
  * @openapi
+<<<<<<< HEAD
  * /v0/register:
  *   delete:
  *     summary: Update an existing user
@@ -58,13 +60,35 @@ const { register, login } = require("../controller");
  *                       type: string
  *                       description: The user's name.
  *                       example: Jone Doe
+=======
+ * /v0/users/{userId}:
+ *  delete:
+ *      description: Delete user
+ *      parameters:
+ *        - in: path
+ *          name: userId
+ *          schema:
+ *              type: string
+ *          required: true
+ *          description: string id of user to delete
+ *      responses:
+ *          200:
+ *              description: User that was deleted
+>>>>>>> 9e834bdbbd12fa38a6be528d399d291f75607bc5
  */
-router.delete("/v0/register", register);
+
+router.delete("/v0/users/{userId}", (req, res) => {
+  let { id } = req.params;
+
+  return res.json({ userId: id });
+});
+
 /**
  * @openapi
- * /v0/register:
+ * /v0/getUsers:
  *   get:
  *     description: Gets all users!
+<<<<<<< HEAD
  *     requestBody:
  *       required: true
  *       content:
@@ -92,6 +116,8 @@ router.delete("/v0/register", register);
  *                 type: string
  *                 description: The user's email.
  *                 example: jon.doe@some.where
+=======
+>>>>>>> 9e834bdbbd12fa38a6be528d399d291f75607bc5
  *     responses:
  *       200:
  *         description: Gets all user.
@@ -116,9 +142,14 @@ router.delete("/v0/register", register);
  *                       description: The user's name.
  *                       example: Jone Doe
  */
-router.get("/v0/register", register);
+
+router.get("/v0/getUsers", (req, res) => {
+  res.status(200).send({ status: "oki, all users found!" });
+});
+
 /**
  * @openapi
+<<<<<<< HEAD
  * /v0/register:
  *   put:
  *     summary: Update an existing user
@@ -173,8 +204,33 @@ router.get("/v0/register", register);
  *                       type: string
  *                       description: The user's name.
  *                       example: Jone Doe
+=======
+ * /v0/userUpdate:
+ *  put:
+ *    tags:
+ *      - user
+ *    summary: Update user
+ *    description: This can only be done by the logged in user.
+ *    operationId: updateUser
+ *    parameters:
+ *      - name: username
+ *        in: path
+ *        description: name that need to be deleted
+ *        required: true
+ *        schema:
+ *          type: string
+ *    responses:
+ *      default:
+ *        description: successful operation
+ *  delete:
+ *    tags:
+ *      - user
+>>>>>>> 9e834bdbbd12fa38a6be528d399d291f75607bc5
  */
-router.put("/v0/register", register);
+router.put("/v0/userUpdate", (req, res) => {
+  res.status(200).send({ status: "User succesfully updated! :)" });
+});
+
 /**
  * @openapi
  * /v0/register:
@@ -232,7 +288,11 @@ router.put("/v0/register", register);
  *                       description: The user's name.
  *                       example: Jone Doe
  */
-router.post("/v0/register", register);
-router.post("/v0/signin", login);
+
+router.post("/v0/register", (req, res) => {
+  res.status(200).send({ status: "User succesfully created! :)" });
+});
+
+//router.post("/v0/signin", login);
 
 module.exports = router;
