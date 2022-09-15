@@ -16,7 +16,7 @@
 
 ### Working with the project in VSCode
 
-``` 
+```
 
     Run this to get the necessary packages for the project to work
     npm install

@@ -47,9 +47,9 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3002, () => {
-  console.log("Server running");
-});
+// server.listen(3002, () => {
+//   console.log("Server running");
+// });
 
 // end of socket
 
@@ -71,5 +71,6 @@ const database = async () => {
 };
 database();
 
+// porthhg
 const port = process.env.PORT || 3001;
 app.listen(port, console.log(`Im inside now!${port}`));
