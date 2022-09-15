@@ -1,5 +1,6 @@
 const express = require("express");
 const { Server } = require("http");
+const User = require("../schemas/userSchema");
 const router = express.Router();
 const { register, login } = require("../controller");
 
@@ -147,6 +148,41 @@ router.put("/v0/userUpdate", (req, res) => {
 
 router.post("/v0/register", register);
 router.post("/v0/signin", login);
+router.patch("/update/:id", async function (req, res) {
+  try {
+    const user = await User.updateOne(
+      { _id: req.params.id },
+      {
+        $set: {
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          email: req.body.email,
+          password: req.body.password,
+        },
+      }
+    );
+    const updatedUser = await user.save();
+    res.json({ message: "User Updated", user: updatedUser });
+  } catch (err) {
+    res.status(401).json({
+      status: "no user found",
+    });
+  }
+});
+
+router.delete("/delete/:id", async function (req, res) {
+  try {
+    const user = await User.findById({ _id: req.params.id });
+    if (user) {
+      await user.remove();
+      res.status(200).json({ message: "user deleted" });
+    }
+  } catch (e) {
+    res.status(401).json({
+      status: "no user found",
+    });
+  }
+});
 
 // router.post("/v0/register", (req, res) => {
 //   res.status(200).send({ status: "User succesfully created! :)" });
