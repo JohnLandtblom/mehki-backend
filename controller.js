@@ -20,7 +20,7 @@ exports.register = async (req, res) => {
   res.status(201).json({
     status: "success",
     data: {
-      user: newUser,
+      user: newUser._id,
     },
   });
 };
@@ -34,9 +34,19 @@ exports.login = async (req, res) => {
       message: "Please enter your email and password!",
     });
     return;
+  }
+  const user = await User.findOne({ email }).select("+password");
+  if (!user || !(await user.correctPassword(password, user.password))) {
+    res
+      .status(401)
+      .json({ status: "failed", message: "Incorrect email or password" });
   } else {
+    const userId = user._id;
     res.status(201).json({
       status: "success",
+      message: "Login succes",
+      userId,
     });
+    console.log(userId);
   }
 };

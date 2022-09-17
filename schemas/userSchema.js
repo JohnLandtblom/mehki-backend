@@ -38,7 +38,16 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-userSchema.methods.comparePassword = async function (
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
+
+  this.password = await bcrypt.hash(this.password, 10);
+  this.confirmPassword = await bcrypt.hash(this.password, 10);
+
+  next();
+});
+
+userSchema.methods.correctPassword = async function (
   enteredPassword,
   userPassword
 ) {

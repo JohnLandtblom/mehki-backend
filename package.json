@@ -10,12 +10,10 @@
     "test": "jest    --group=-component --group=-integration --group=-unit",
     "componenttest": "jest --watchAll  --group=component",
     "integrationtest": "jest --group=integration ",
-    "unittest": "jest --group=unit"
+    "unittest": "jest --watchAll  --group=unit"
   },
   "pre-commit": [
-    "lint",
-    "test",
-    "unittest"
+    "lint"
   ],
   "jest": {
     "runner": "groups"
