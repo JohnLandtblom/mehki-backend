@@ -1,7 +1,7 @@
 {
   "name": "edu-http-classic",
   "description": "Simple backend server",
-  "repository": "https://github.com/CristianBerglund/gruppgit.git",
+  "repository": "https://github.com/JohnLandtblom/mehki-backend.git",
   "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/main/public/node.svg",
   "keywords": ["node", "express", "heroku"],
   "image": "heroku/nodejs"
