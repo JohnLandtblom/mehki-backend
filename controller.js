@@ -47,6 +47,5 @@ exports.login = async (req, res) => {
       message: "Login succes",
       userId,
     });
-    console.log(userId);
   }
 };
