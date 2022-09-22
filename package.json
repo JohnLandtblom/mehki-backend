@@ -7,7 +7,7 @@
     "lint": "prettier --write \"**/*.{js,jsx,json,md}\" ",
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "integrationtest": "jest --group=component --group=-unit --detectOpenHandles",
+    "integrationtest": "jest --group=component --group=-unit --forceExit",
     "comptest": "jest --group=component",
     "inttest": "jest --group=integration ",
     "unittest": "jest  --group=unit"
