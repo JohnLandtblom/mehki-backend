@@ -24,7 +24,7 @@ jobs:
           cache: "npm"
 
       - name: Run the tests hihi
-      - run: npm install && npm run test
+        run: npm install && npm run test
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI}}
       # - name: Connect to DB
