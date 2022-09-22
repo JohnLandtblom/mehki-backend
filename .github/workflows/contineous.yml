@@ -16,14 +16,13 @@ jobs:
         node-version: [12.x, 14.x, 16.x]
 
     steps:
-      - name: Installing all dev dependencis & integration tests
-      - run: npm install && npm run test
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
+      - name: Installing all dev dependencis & integration tests
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+      - run: npm install && npm run test
 
       # - name: Build docker image
       #   id: docker_build
