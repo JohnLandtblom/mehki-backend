@@ -8,8 +8,10 @@ on:
       - "v*"
 
 jobs:
-  build:
+  componenttest:
     runs-on: ubuntu-latest
+    env:
+      MONGODB_URI: ${{ secrets.MONGODB_URI}}
 
     strategy:
       matrix:
@@ -17,19 +19,60 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Installing all dev dependencis & integration tests
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - name: Connect to DB
-        uses: supercharge/mongodb-github-action@1.8.0
-        with:
-          MONGODB_URI: ${{ secrets.MONGODB_URI}},
+      - run: npm install
+      - run: npm run comptest
 
-      - run: npm install && npm run test
+  integrationtest:
+    needs: componenttest
+    runs-on: ubuntu-latest
+    env:
+      MONGODB_URI: ${{ secrets.MONGODB_URI}}
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - run: npm install
+      - run: npm run test
 
       # - name: Build docker image
       #   id: docker_build
       #   uses: docker/build
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     strategy:
+#       matrix:
+#         node-version: [12.x, 14.x, 16.x]
+
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Installing all dev dependencis & integration tests
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           cache: "npm"
+
+#       - name: Connect to DB
+#         uses: supercharge/mongodb-github-action@1.8.0
+#         with:
+#           MONGODB_URI: ${{ secrets.MONGODB_URI}},
+
+#       - run: npm install && npm run test
+
+#       # - name: Build docker image
+#       #   id: docker_build
+#       #   uses: docker/build
