@@ -17,7 +17,7 @@ const { application } = require("express");
 
 const database = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    mongoose.connect(process.env.MONGODB_URI);
     // console.log("Connected to DB");
   } catch (e) {
     console.log(e);

@@ -27,11 +27,12 @@ describe("Testing API with supertest ", () => {
     server = app.listen(PORT);
   });
 
-  afterAll(async () => {
+  afterAll((done) => {
     // Deletes a user after the tests has run successfully (refer to line 13)
     // await User.deleteOne({ firstName: "patrik" });
-    await mongoose.disconnect();
-    await server.close();
+    mongoose.disconnect();
+    server.close();
+    done();
   });
 
   it("should add newUser", async () => {
