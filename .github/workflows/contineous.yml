@@ -30,7 +30,7 @@ jobs:
           cache: "npm"
 
       - run: npm ci
-      - run: npm run comptest
+      - run: npm run integrationtest
 
       # - name: Build docker image
       #   id: docker_build
