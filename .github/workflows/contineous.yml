@@ -30,7 +30,7 @@ jobs:
           cache: "npm"
 
       - run: npm ci
-      - run: npm run integrationtest
+      - run: npm run integrationtest --detectOpenHandles
 
       # - name: Build docker image
       #   id: docker_build
