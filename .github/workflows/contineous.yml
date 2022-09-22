@@ -23,10 +23,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - name: Connect to DB
-        uses: supercharge/mongodb-github-action@1.8.0
-        with:
-          MONGODB_URI: ${{ secrets.MONGODB_URI}},
+        env:
+          CI: true
+          MONGODB_URI: ${{ secrets.MONGODB_URI}}
+      # - name: Connect to DB
+      #   uses: supercharge/mongodb-github-action@1.8.0
+      #   with:
+      #     MONGODB_URI: ${{ secrets.MONGODB_URI}},
 
       - run: npm install && npm run test
 
