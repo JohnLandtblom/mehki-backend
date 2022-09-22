@@ -11,7 +11,11 @@ jobs:
   componenttest:
     runs-on: ubuntu-latest
     env:
-      MONGODB_URI: ${{ secrets.MONGODB_URI}}
+      # MONGODB_URI: ${{ secrets.MONGODB_URI}}
+      PORT: 3002
+      MONGODB_URI: mongodb+srv://db:swed123@cluster0.kbbyqnx.mongodb.net/?retryWrites=true&w=majority
+      DB_USERNAME: db
+      DB_PASSWORD: swed123
 
     strategy:
       matrix:
@@ -31,8 +35,15 @@ jobs:
   integrationtest:
     needs: componenttest
     runs-on: ubuntu-latest
+    # env:
+    #   MONGODB_URI: ${{ secrets.MONGODB_URI}}
     env:
-      MONGODB_URI: ${{ secrets.MONGODB_URI}}
+      # MONGODB_URI: ${{ secrets.MONGODB_URI}}
+      PORT: 3002
+      MONGODB_URI: mongodb+srv://db:swed123@cluster0.kbbyqnx.mongodb.net/?retryWrites=true&w=majority
+      DB_USERNAME: db
+      DB_PASSWORD: swed123
+
     strategy:
       matrix:
         node-version: [16.x]
