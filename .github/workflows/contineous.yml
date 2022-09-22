@@ -8,7 +8,7 @@ on:
       - "v*"
 
 env:
-  MONGODB_URI: ${{ secrets.MONGODB_URI}}
+  MONGODB_URI: ${{ secrets.MONGODB_URI }}
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
           cache: "npm"
 
       - name: Run the tests hihi
-        run: echo MONGOBD_URI && npm install && npm run test
+        run: echo MONGODB_URI && npm install && npm run test
 
       # - name: Connect to DB
       #   uses: supercharge/mongodb-github-action@1.8.0
