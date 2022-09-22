@@ -22,6 +22,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+
+      - name: Connect to DB
+        uses: supercharge/mongodb-github-action@1.8.0
+        with:
+          env: ${{ secrets.MONGODB_URI}}
+
       - run: npm install && npm run test
 
       # - name: Build docker image
