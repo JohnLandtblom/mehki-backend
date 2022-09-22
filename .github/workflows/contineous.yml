@@ -7,9 +7,6 @@ on:
     tags:
       - "v*"
 
-env:
-  MONGODB_URI: ${{ secrets.MONGODB_URI }}
-
 jobs:
   componenttest:
     runs-on: ubuntu-latest
