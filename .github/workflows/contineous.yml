@@ -13,8 +13,8 @@ jobs:
     env:
       PORT: ${{secrets.PORT}}
       MONGODB_URI: ${{ secrets.MONGODB_URI}}
-      DB_USERNAME: ${{ secrets.DB_USERNAME}}
-      DB_PASSWORD: ${{ secrets.DB_PASSWORD}}
+      # DB_USERNAME: ${{ secrets.DB_USERNAME}}
+      # DB_PASSWORD: ${{ secrets.DB_PASSWORD}}
 
     strategy:
       matrix:
