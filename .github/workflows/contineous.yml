@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -25,7 +25,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - run: npm install
+      - run: npm ci
       - run: npm run comptest
 
   integrationtest:
@@ -35,7 +35,7 @@ jobs:
       MONGODB_URI: ${{ secrets.MONGODB_URI}}
     strategy:
       matrix:
-        node-version: [16]
+        node-version: [16.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -44,7 +44,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - run: npm install
+      - run: npm ci
       - run: npm run test
 
       # - name: Build docker image
