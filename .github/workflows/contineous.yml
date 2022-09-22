@@ -11,11 +11,10 @@ jobs:
   integration-test:
     runs-on: ubuntu-latest
     env:
-      # MONGODB_URI: ${{ secrets.MONGODB_URI}}
-      PORT: 3002
-      MONGODB_URI: mongodb+srv://db:swed123@cluster0.kbbyqnx.mongodb.net/?retryWrites=true&w=majority
-      DB_USERNAME: db
-      DB_PASSWORD: swed123
+      PORT: ${{secrets.PORT}}
+      MONGODB_URI: ${{ secrets.MONGODB_URI}}
+      DB_USERNAME: ${{ secrets.DB_USERNAME}}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD}}
 
     strategy:
       matrix:
@@ -30,34 +29,8 @@ jobs:
           cache: "npm"
 
       - run: npm ci
-      - run: npm run integrationtest 
+      - run: npm run integrationtest
 
       # - name: Build docker image
       #   id: docker_build
       #   uses: docker/build
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     strategy:
-#       matrix:
-#         node-version: [12.x, 14.x, 16.x]
-
-#     steps:
-#       - uses: actions/checkout@v3
-#       - name: Installing all dev dependencis & integration tests
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#           cache: "npm"
-
-#       - name: Connect to DB
-#         uses: supercharge/mongodb-github-action@1.8.0
-#         with:
-#           MONGODB_URI: ${{ secrets.MONGODB_URI}},
-
-#       - run: npm install && npm run test
-
-#       # - name: Build docker image
-#       #   id: docker_build
-#       #   uses: docker/build
