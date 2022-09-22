@@ -22,15 +22,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CristianBerglund/gruppgit.git"
+    "url": "git+https://github.com/JohnLandtblom/mehki-backend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CristianBerglund/gruppgit/issues"
+    "url": "https://github.com/JohnLandtblom/mehki-backend/issues"
   },
-  "homepage": "https://github.com/CristianBerglund/gruppgit#readme",
+  "homepage": "https://github.com/JohnLandtblom/mehki-backend#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
