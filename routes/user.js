@@ -1,4 +1,5 @@
 const express = require("express");
+const User = require("../schemas/userSchema");
 const router = express.Router();
 const { register, login } = require("../controller");
 
