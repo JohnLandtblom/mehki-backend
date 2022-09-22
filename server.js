@@ -18,7 +18,6 @@ const { application } = require("express");
 const database = async () => {
   try {
     mongoose.connect(process.env.MONGODB_URI);
-    // console.log("Connected to DB");
   } catch (e) {
     console.log(e);
   }
@@ -26,7 +25,9 @@ const database = async () => {
 database();
 // porthhg
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, console.log(`Connected to db!${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Connected to db!${PORT}`);
+});
 
 const routes = require("./routes/user");
 app.use("/", routes);
