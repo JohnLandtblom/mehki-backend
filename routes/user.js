@@ -1,6 +1,4 @@
 const express = require("express");
-const { Server } = require("http");
-const User = require("../schemas/userSchema");
 const router = express.Router();
 const { register, login } = require("../controller");
 
