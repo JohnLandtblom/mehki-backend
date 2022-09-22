@@ -8,7 +8,7 @@ on:
       - "v*"
 
 jobs:
-  componenttest:
+  integration-test:
     runs-on: ubuntu-latest
     env:
       # MONGODB_URI: ${{ secrets.MONGODB_URI}}
@@ -31,32 +31,6 @@ jobs:
 
       - run: npm ci
       - run: npm run comptest
-
-  integrationtest:
-    needs: componenttest
-    runs-on: ubuntu-latest
-    # env:
-    #   MONGODB_URI: ${{ secrets.MONGODB_URI}}
-    env:
-      # MONGODB_URI: ${{ secrets.MONGODB_URI}}
-      PORT: 3002
-      MONGODB_URI: mongodb+srv://db:swed123@cluster0.kbbyqnx.mongodb.net/?retryWrites=true&w=majority
-      DB_USERNAME: db
-      DB_PASSWORD: swed123
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-
-      - run: npm ci
-      - run: npm run test
 
       # - name: Build docker image
       #   id: docker_build
