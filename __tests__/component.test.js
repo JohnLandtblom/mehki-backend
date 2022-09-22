@@ -8,12 +8,13 @@ const request = require("supertest");
 const app = require("../server");
 
 const db = process.env.MONGODB_URI;
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.TEST_PORT || 3002;
 
+const testEmail = "lmao@gmail.com";
 const newUser = {
   firstName: "jiji",
   lastName: "kino",
-  email: "3@gmail.com",
+  email: testEmail,
   password: "string1",
 };
 
@@ -41,11 +42,11 @@ describe("Testing API with supertest ", () => {
   });
 
   const login = {
-    email: "3@gmail.com",
+    email: testEmail,
     password: "string1",
   };
 
-  it("should add newUser", async () => {
+  it("should login User", async () => {
     await request(app)
       .post("/v0/signin")
       .send(login)

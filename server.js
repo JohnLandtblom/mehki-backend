@@ -25,8 +25,8 @@ const database = async () => {
 };
 database();
 // porthhg
-const port = process.env.PORT || 3001;
-app.listen(console.log(`Connected to db!${port}`));
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, console.log(`Connected to db!${PORT}`));
 
 const routes = require("./routes/user");
 app.use("/", routes);
