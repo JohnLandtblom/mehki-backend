@@ -15,14 +15,11 @@ const http = require("http");
 const { Server } = require("socket.io");
 const { application } = require("express");
 
-const database = async () => {
-  try {
-    mongoose.connect(process.env.MONGODB_URI);
-  } catch (e) {
-    console.log(e);
-  }
-};
-database();
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 // porthhg
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
