@@ -36,38 +36,38 @@ app.get("/", function (req, res) {
 
 // new socket
 
-// const server = http.createServer(app);
+const server = http.createServer(app);
 
-// const io = new Server(server, {
-//   //vilken server den ska lyssna på och vilka metoder som får användas
-//   cors: {
-//     origin: "http://localhost:3000", //
-//     methods: ["GET", "POST"],
-//   },
-// });
+const io = new Server(server, {
+  //vilken server den ska lyssna på och vilka metoder som får användas
+  cors: {
+    origin: "http://localhost:3000", //
+    methods: ["GET", "POST"],
+  },
+});
 
-// io.on("connection", (socket) => {
-//   // lyssnar ifall det är någon connection på server
+io.on("connection", (socket) => {
+  // lyssnar ifall det är någon connection på server
 
-//   console.log(`User connected ${socket.id}`);
-//   socket.on("join_room", (data) => {
-//     socket.join(data);
-//     console.log(`User with ID: ${socket.id} joined room: ${data}`);
-//   });
+  console.log(`User connected ${socket.id}`);
+  socket.on("join_room", (data) => {
+    socket.join(data);
+    console.log(`User with ID: ${socket.id} joined room: ${data}`);
+  });
 
-//   socket.on("send_message", (data) => {
-//     socket.to(data.room).emit("receive_message", data);
-//   });
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message", data);
+  });
 
-//   socket.on("disconnect", () => {
-//     // lyssnar ifall någon disconnectat
-//     console.log("User Disconnected", socket.id);
-//   });
-// });
+  socket.on("disconnect", () => {
+    // lyssnar ifall någon disconnectat
+    console.log("User Disconnected", socket.id);
+  });
+});
 
-// server.listen(3002, () => {
-//   console.log("Server running");
-// });
+server.listen(3002, () => {
+  console.log("Server running");
+});
 
 // end of socket
 

@@ -19,6 +19,7 @@ const newUser = {
   email: testEmail,
   password: "string1",
 };
+console.log("hello");
 
 describe("Testing API with supertest ", () => {
   let server;
