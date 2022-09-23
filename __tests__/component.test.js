@@ -14,7 +14,7 @@ const User = require("../schemas/userSchema");
 const random = Math.floor(Math.random() * 1000) + 1;
 const testEmail = `jiji${random}@gmail.se`;
 const newUser = {
-  firstName: "patrik",
+  firstName: "Cristian",
   lastName: "kino",
   email: testEmail,
   password: "string1",
@@ -27,11 +27,10 @@ describe("Testing API with supertest ", () => {
     server = app.listen(PORT);
   });
 
-  afterAll((done) => {
-    User.deleteOne({ firstName: "patrik" });
-    mongoose.disconnect();
-    server.close();
-    done();
+  afterAll(async () => {
+    await User.deleteOne({ firstName: "Cristian" });
+    await mongoose.disconnect();
+    await server.close();
   });
 
   it("should add newUser", async () => {
