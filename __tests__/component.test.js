@@ -9,11 +9,12 @@ const app = require("../server");
 
 const db = process.env.MONGODB_URI;
 const PORT = process.env.TEST_PORT || 3003;
+const User = require("../schemas/userSchema");
 
 const random = Math.floor(Math.random() * 1000) + 1;
 const testEmail = `jiji${random}@gmail.se`;
 const newUser = {
-  firstName: "jiji",
+  firstName: "patrik",
   lastName: "kino",
   email: testEmail,
   password: "string1",
@@ -27,6 +28,7 @@ describe("Testing API with supertest ", () => {
   });
 
   afterAll((done) => {
+    User.deleteOne({ firstName: "patrik" });
     mongoose.disconnect();
     server.close();
     done();
