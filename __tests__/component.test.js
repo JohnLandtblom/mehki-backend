@@ -9,8 +9,7 @@ const app = require("../server");
 
 const db = process.env.MONGODB_URI;
 const PORT = process.env.TEST_PORT || 3003;
-// Required to drop delete user from collection
-// const User = require("../schemas/userSchema");
+
 const random = Math.floor(Math.random() * 1000) + 1;
 const testEmail = `jiji${random}@gmail.se`;
 const newUser = {
