@@ -27,8 +27,6 @@ describe("Testing API with supertest ", () => {
   });
 
   afterAll((done) => {
-    // Deletes a user after the tests has run successfully (refer to line 13)
-    // await User.deleteOne({ firstName: "patrik" });
     mongoose.disconnect();
     server.close();
     done();
