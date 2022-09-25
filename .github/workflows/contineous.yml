@@ -34,8 +34,6 @@ jobs:
 
       - run: npm ci
       - run: npm run integrationtest
-        with:
-          start: open app
 
       # - name: Build docker image
       #   id: docker_build
