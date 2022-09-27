@@ -7,7 +7,7 @@ dotEnv.config();
 const request = require("supertest");
 const app = require("../server");
 
-const db = process.env.MONGODB_URI;
+const db = process.env.MONGODB_URL;
 const PORT = process.env.TEST_PORT || 3003;
 const User = require("../schemas/userSchema");
 
