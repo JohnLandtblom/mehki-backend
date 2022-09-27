@@ -10,11 +10,6 @@ on:
 jobs:
   integration-test:
     runs-on: ubuntu-latest
-    # env:
-    #   # PORT: ${{secrets.PORT}}
-    #   # MONGODB_URI: ${{ secrets.MONGODB_URI}}
-
-    #   MONGODB_URI: mongodb+srv://db:swed123@cluster0.kbbyqnx.mongodb.net/?retryWrites=true&w=majority
 
     strategy:
       matrix:
