@@ -13,7 +13,6 @@ app.use(express.json());
 // Test
 const http = require("http");
 const { Server } = require("socket.io");
-// const { application } = require("express");
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
