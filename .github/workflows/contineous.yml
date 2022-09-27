@@ -41,10 +41,10 @@ jobs:
           mongodb-port: ${{ secrets.PORT }}
 
       - name: Install dependencies
-      - run: npm ci
+        run: npm ci
 
       - name: Run Integration test
-      - run: npm run integrationtest
+        run: npm run integrationtest
 
       # - name: Build docker image
       #   id: docker_build
