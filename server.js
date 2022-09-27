@@ -1,13 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const path = require("path");
+const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
-// const swaggerUI = require("swagger-ui-express");
-// const swaggerJsDoc = require("swagger-jsdoc");
-// const swaggerDocument = require("./swagger.json");
-const app = express();
+const path = require("path");
+const swaggerUI = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerDocument = require("./swagger.json");
 app.use(cors());
 app.use(express.json());
 // Test
