@@ -19,22 +19,26 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
+        mongodb-version: ["4.2", "4.4", "5.0", "6.0"]
 
     steps:
+      - name: Git Checkout
       - uses: actions/checkout@v3
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+
       - name: Connect to MongoDB
         uses: supercharge/mongodb-github-action@1.8.0
         with:
-        mongodb-version: ${{ matrix.mongodb-version }}
-        mongodb-username: ${{ secrets.DB_USERNAME }}
-        mongodb-password: ${{ secrets.DB_PASSWORD}}
-        mongodb-url: ${{ secrets.MONGODB_URL }}
-        mongodb-port: ${{ secrets.PORT }}
+          mongodb-version: ${{ matrix.mongodb-version }}
+          mongodb-username: ${{ secrets.DB_USERNAME }}
+          mongodb-password: ${{ secrets.DB_PASSWORD}}
+          mongodb-url: ${{ secrets.MONGODB_URL }}
+          mongodb-port: ${{ secrets.PORT }}
 
       - name: Install dependencies
       - run: npm ci
