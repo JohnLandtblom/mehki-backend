@@ -30,9 +30,9 @@ jobs:
         uses: supercharge/mongodb-github-action@1.8.0
         with:
           mongodb-version: ${{matrix.mongodb-version}}
-          mongodb-username: ${{secrets.DB_USERNAME}}
+          mongodb-username: ${{cluster0.dy4vwha.mongodb.net}}
           mongodb-password: ${{secrets.DB_PASSWORD}}
-          mongodb-url: secrets.MONGODB_URI
+          mongodb-url: ${{secrets.MONGODB_URI}}
           mongodb-port: ${{secrets.PORT}}
 
       - name: Install dependencies
