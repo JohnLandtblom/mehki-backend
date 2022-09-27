@@ -15,10 +15,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 const { application } = require("express");
 
-mongoose.connect(process.env.MONGODB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB_URL, {});
 
 // porthhg
 const PORT = process.env.PORT || 3001;
