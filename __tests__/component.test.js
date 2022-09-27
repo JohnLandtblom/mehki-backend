@@ -2,8 +2,8 @@
  * @group component
  */
 const mongoose = require("mongoose");
-const dotEnv = require("dotenv");
-dotEnv.config();
+const dotenv = require("dotenv");
+dotenv.config();
 const request = require("supertest");
 const app = require("../server");
 

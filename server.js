@@ -2,8 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
-const dotEnv = require("dotenv");
-dotEnv.config();
+const dotenv = require("dotenv");
+dotenv.config();
 const swaggerUI = require("swagger-ui-express");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerDocument = require("./swagger.json");
@@ -15,7 +15,10 @@ const http = require("http");
 const { Server } = require("socket.io");
 const { application } = require("express");
 
-mongoose.connect(process.env.MONGODB_URL, {});
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // porthhg
 const PORT = process.env.PORT || 3001;
