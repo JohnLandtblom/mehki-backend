@@ -32,7 +32,7 @@ jobs:
           mongodb-version: ${{matrix.mongodb-version}}
           mongodb-username: ${{secrets.DB_USERNAME}}
           mongodb-password: ${{secrets.DB_PASSWORD}}
-          mongodb-url: ${{secrets.MONGODB_URL}}
+          mongodb-url: ${{secrets.MONGODB_URI}}
           mongodb-port: ${{secrets.PORT}}
 
       - name: Install dependencies
