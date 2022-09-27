@@ -4,16 +4,16 @@ const cors = require("cors");
 const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config();
-const swaggerUI = require("swagger-ui-express");
-const swaggerJsDoc = require("swagger-jsdoc");
-const swaggerDocument = require("./swagger.json");
+// const swaggerUI = require("swagger-ui-express");
+// const swaggerJsDoc = require("swagger-jsdoc");
+// const swaggerDocument = require("./swagger.json");
 const app = express();
 app.use(cors());
 app.use(express.json());
 // Test
 const http = require("http");
 const { Server } = require("socket.io");
-const { application } = require("express");
+// const { application } = require("express");
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
