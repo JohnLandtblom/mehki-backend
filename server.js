@@ -40,7 +40,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   //vilken server den ska lyssna på och vilka metoder som får användas
   cors: {
-    origin: "http://mehki-frontend.herokuapp.com/", //
+    origin: "http://localhost:3000", //
     methods: ["GET", "POST"],
   },
 });
