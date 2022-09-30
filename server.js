@@ -13,7 +13,7 @@ app.use(express.json());
 // Test
 const http = require("http");
 const { Server } = require("socket.io");
-const mehkiHerokuSocket = "https://mehkiwebsocket.herokuapp.com/"
+const mehkiHerokuSocket = "https://thawing-beyond-87063.herokuapp.com/"
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
