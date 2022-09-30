@@ -13,7 +13,7 @@ app.use(express.json());
 // Test
 const http = require("http");
 const { Server } = require("socket.io");
-const mehkiSocket = "https://mehkiwebsocket.herokuapp.com/"
+const mehkiHerokuSocket = "https://mehkiwebsocket.herokuapp.com/"
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
@@ -65,7 +65,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(mehkiSocket, () => {
+server.listen(mehkiHerokuSocket, () => {
   console.log("Server running");
 });
 
