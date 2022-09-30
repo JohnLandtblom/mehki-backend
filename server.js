@@ -41,7 +41,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   //vilken server den ska lyssna på och vilka metoder som får användas
   cors: {
-    origin: "https://thawing-beyond-87063.herokuapp.com/", //
+    origin: "https://mehki-frontend.herokuapp.com/forum", //
     methods: ["GET", "POST"],
   },
 });
