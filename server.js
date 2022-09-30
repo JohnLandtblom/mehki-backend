@@ -41,7 +41,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   //vilken server den ska lyssna på och vilka metoder som får användas
   cors: {
-    origin: "http://localhost:3000", //
+    origin: "https://thawing-beyond-87063.herokuapp.com/", //
     methods: ["GET", "POST"],
   },
 });
