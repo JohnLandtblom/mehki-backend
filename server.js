@@ -35,7 +35,7 @@ app.get("/", function (req, res) {
 
 // new socket
 
-const server = http.createServer(app);
+/*const server = http.createServer(app);
 
 const io = new Server(server, {
   //vilken server den ska lyssna på och vilka metoder som får användas
@@ -43,7 +43,14 @@ const io = new Server(server, {
     origin: "http://localhost:3000", //
     methods: ["GET", "POST"],
   },
-});
+});*/
+
+const INDEX = '/index.html';
+
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+  const io = socketIO(server);
 
 io.on("connection", (socket) => {
   // lyssnar ifall det är någon connection på server
