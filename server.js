@@ -13,7 +13,6 @@ app.use(express.json());
 // Test
 const http = require("http");
 const { Server } = require("socket.io");
-const mehkiHerokuSocket = "https://thawing-beyond-87063.herokuapp.com/"
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
@@ -41,7 +40,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   //vilken server den ska lyssna på och vilka metoder som får användas
   cors: {
-    origin: "https://mehki-frontend.herokuapp.com/forum", //
+    origin: "http://localhost:3000", //
     methods: ["GET", "POST"],
   },
 });
@@ -65,7 +64,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(mehkiHerokuSocket, () => {
+server.listen(3004, () => {
   console.log("Server running");
 });
 
