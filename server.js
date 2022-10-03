@@ -11,8 +11,8 @@ const swaggerDocument = require("./swagger.json");
 app.use(cors());
 app.use(express.json());
 // Test
-const http = require("http");
-const { Server } = require("socket.io");
+/*const http = require("http");
+const { Server } = require("socket.io");*/
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
@@ -35,7 +35,7 @@ app.get("/", function (req, res) {
 
 //new socket
 
-const server = http.createServer(app);
+/*const server = http.createServer(app);
 
 const io = new Server(server, {
   //vilken server den ska lyssna på och vilka metoder som får användas
@@ -66,7 +66,7 @@ io.on("connection", (socket) => {
 
 server.listen(3004, () => {
   console.log("Server running");
-});
+});*/
 
 // end of socket
 
