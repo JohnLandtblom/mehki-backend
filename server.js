@@ -21,6 +21,7 @@ app.listen(PORT, () => {
   console.log(`Connected to db!${PORT}`);
 });
 
+// test
 const routes = require("./routes/user");
 app.use("/", routes);
 
